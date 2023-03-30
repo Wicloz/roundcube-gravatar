@@ -94,7 +94,7 @@ class gravatar_addressbook_backend extends rcube_addressbook
         $acfg = array('%%' => '%',
                       '%z' => intval($config->get('gravatar_size', 56)),
                       '%r' => urlencode($config->get('gravatar_rating', 'g')),
-                      '%s' => $config->get('gravatar_https', false) ? 'https' : 'http'
+                      '%s' => $config->get('gravatar_https', true) ? 'https' : 'http'
                   );
         $ge = $config->get('gravatar_enabled', false);
         $gpapi = $config->get('gravatar_photo_api', '%s://www.gravatar.com/avatar/%m?s=%z&r=%r&d=404');
