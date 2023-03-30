@@ -68,7 +68,7 @@ class gravatar extends rcube_plugin
         $input = new html_inputfield(array('name' => $field_id, 'id' => $field_id, 'size' => 45));
         $params['blocks'][$this->abook_id]['options'][$field_id] = array(
             'title' => html::label($field_id, rcube::Q($this->gettext('gravatar_size'))),
-            'content' => $input->show($rcmail->config->get('gravatar_size', 128))
+            'content' => $input->show($rcmail->config->get('gravatar_size', 56))
         );
         $field_id = 'rc_gravatar_rating';
         $select   = new html_select(array('name' => $field_id, 'id' => $field_id));
@@ -98,7 +98,7 @@ class gravatar extends rcube_plugin
     if($params['section'] == 'addressbook') {
         $rcmail = rcmail::get_instance();
         $params['prefs']['gravatar_enabled'] = isset($_POST['rc_gravatar_enabled']) ? true : false;
-        $params['prefs']['gravatar_size'] = isset($_POST['rc_gravatar_size']) && intval($_POST['rc_gravatar_size']) != 0 ? intval($_POST['rc_gravatar_size']) : 128;
+        $params['prefs']['gravatar_size'] = isset($_POST['rc_gravatar_size']) && intval($_POST['rc_gravatar_size']) != 0 ? intval($_POST['rc_gravatar_size']) : 56;
         $params['prefs']['gravatar_rating'] = isset($_POST['rc_gravatar_rating']) ? $_POST['rc_gravatar_rating'] : 'g';
         if ($rcmail->config->get('gravatar_custom_photo_api')!=null) {
             $params['prefs']['gravatar_custom'] = isset($_POST['rc_gravatar_custom']) ? true : false;
