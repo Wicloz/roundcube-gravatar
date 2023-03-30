@@ -1,7 +1,7 @@
 <?php
 // Per-user chooseable settings
 $config['gravatar_enabled'] = false;
-$config['gravatar_size'] = 56;
+$config['gravatar_size'] = 112;
 $config['gravatar_rating'] = 'g'; // Possible values 'g', 'pg', 'r', 'x'
 $config['gravatar_custom'] = false;
 

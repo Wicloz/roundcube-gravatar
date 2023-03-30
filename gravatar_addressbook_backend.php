@@ -92,7 +92,7 @@ class gravatar_addressbook_backend extends rcube_addressbook
 
         $config = rcmail::get_instance()->config;
         $acfg = array('%%' => '%',
-                      '%z' => intval($config->get('gravatar_size', 56)),
+                      '%z' => intval($config->get('gravatar_size', 112)),
                       '%r' => urlencode($config->get('gravatar_rating', 'g')),
                       '%s' => $config->get('gravatar_https', true) ? 'https' : 'http'
                   );
